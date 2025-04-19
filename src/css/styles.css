@@ -13,6 +13,10 @@ body {
   line-height: 1.78;
   color: var(--colorTextPrimary);
   background-color: var(--colorBg);
+  background-image: url(../images/BG-hero.webp);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
 }
 .container {
   max-width: 1507px;
@@ -21,13 +25,15 @@ body {
 }
 
 .header {
-  padding-top: 67px;
+  padding-top: 65px;
 }
 .header-container {
   max-width: 92%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 .logo {
   font-family: var(--fontLogo);
@@ -37,15 +43,31 @@ body {
   letter-spacing: 0.01em;
   font-size: 32px;
 }
+.nav-link:hover,
+.action-link:hover {
+  opacity: 80%;
+}
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 37px;
+  gap: 40px;
 }
 .action-link {
   font-size: 17px;
   font-weight: 900;
   line-height: 1.18;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.action-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/account.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero {
@@ -62,23 +84,56 @@ body {
   line-height: 1.17;
   letter-spacing: 0.33em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.hero-subtitle::before {
+  content: "";
+  width: 72px;
+  height: 2px;
+  background-color: var(--colorTextAccent);
 }
 .hero-title {
   font-family: var(--fontTitle);
   font-size: 88px;
   line-height: 1.14;
   font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 32px;
+}
+.hero-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.hero-link:hover {
+  opacity: 80%;
+}
+.hero-link::after {
+  content: "";
+  width: 16px;
+  height: 24px;
+  background-image: url(../images/arrow_downward.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .travel {
   padding-bottom: 200px;
 }
+.travel-item {
+  margin-bottom: 200px;
+}
+.travel-item:last-child {
+  margin-bottom: 0;
+}
 .travel-list {
   display: flex;
   flex-direction: column;
-  gap: 200px;
 }
-.travel-item:nth-child(even) {
+.travel-item:nth-child(even) .step-photo {
   order: -1;
 }
 
@@ -91,23 +146,62 @@ body {
   display: flex;
   flex-direction: column;
   gap: 27px;
+  padding-left: 150px;
+  background-image: url(../images/card-01.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  padding-top: 50px;
+}
+.travel-item:nth-child(2) .step-body {
+  background-image: url(../images/card-02.svg);
+}
+.travel-item:nth-child(3) .step-body {
+  background-image: url(../images/card-03.svg);
 }
 .step-text {
   line-height: 1.17;
+  font-weight: 900;
   letter-spacing: 0.33em;
   text-transform: uppercase;
   color: var(--colorTextAccent);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.step-text::before {
+  content: "";
+  width: 72px;
+  height: 2px;
+  color: #fbd784;
 }
 .step-title {
   font-family: var(--fontTitle);
-  font-size: 88px;
+  font-size: 64px;
   line-height: 1.34;
   font-weight: 400;
   max-width: 555px;
 }
+.step-description {
+  font-weight: 900;
+}
 .step-link {
   color: var(--colorTextAccent);
   font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.step-link:hover {
+  opacity: 80%;
+}
+.step-link::after {
+  content: "";
+  width: 24px;
+  height: 16px;
+  background-image: url(../images/arrow_right.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .footer {
@@ -119,14 +213,17 @@ body {
 }
 .footer-info {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 .footer-info-text {
   font-weight: 900;
   max-width: 303px;
   flex-grow: 1;
 }
-.footer-info-copypight {
-  opacity: 0.5;
+.footer-info-copyright {
+  opacity: 50%;
 }
 .blog-title,
 .mntn-title {
@@ -134,10 +231,15 @@ body {
   line-height: 1.33;
   font-size: 24px;
   color: var(--colorTextAccent);
+  margin-bottom: 25px;
 }
 .blog-list,
 .mntn-title {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 15px;
+}
+.blog-link:hover,
+.mntn-link:hover {
+  opacity: 80%;
 }
